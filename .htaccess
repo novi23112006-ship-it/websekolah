@@ -1,0 +1,12 @@
+# Block access to .env and hidden dot files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<Files ".env*">
+    Order allow,deny
+    Deny from all
+</Files>
+
+Options -Indexes

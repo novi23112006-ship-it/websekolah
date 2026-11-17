@@ -1,0 +1,74 @@
+{
+    "runtime": "PHP 8.5.12",
+    "total_tests": 9,
+    "total_assertions": 18,
+    "failed_tests": 0,
+    "time_seconds": 0.006,
+    "memory_mb": 0.73,
+    "status": "OK",
+    "test_cases": [
+        {
+            "name": "testHitungJarakMeterHaversineTepat",
+            "desc": "Menghitung jarak geodesik dua titik koordinat GPS menggunakan formula Haversine",
+            "assertions": 1,
+            "passed": true,
+            "actual": "Jarak terhitung: 582 meter (rentang toleransi 560-600m)"
+        },
+        {
+            "name": "testHitungJarakTitikSamaNolMeter",
+            "desc": "Menghitung jarak antara dua koordinat yang identik harus menghasilkan nilai 0 meter",
+            "assertions": 1,
+            "passed": true,
+            "actual": "Jarak terhitung: 0 meter"
+        },
+        {
+            "name": "testValidasiJarakDalamRadius100Meter",
+            "desc": "Verifikasi bahwa pengguna dalam radius <= 100 meter dari sekolah diizinkan presensi",
+            "assertions": 1,
+            "passed": true,
+            "actual": "Jarak terhitung: 40 meter (diizinkan presensi)"
+        },
+        {
+            "name": "testValidasiJarakDiLuarRadius100MeterDitolak",
+            "desc": "Verifikasi bahwa pengguna di luar radius > 100 meter dari sekolah ditolak presensinya",
+            "assertions": 1,
+            "passed": true,
+            "actual": "Jarak terhitung: 3136 meter (status ditolak sesuai aturan)"
+        },
+        {
+            "name": "testKonversiHariIndonesia",
+            "desc": "Memastikan pemetaan hari bahasa Inggris (Monday, Friday, Sunday) dikonversi tepat ke bahasa Indonesia",
+            "assertions": 3,
+            "passed": true,
+            "actual": "Hasil konversi: Monday->Senin, Friday->Jumat, Sunday->Minggu"
+        },
+        {
+            "name": "testKonversiBulanIndonesia",
+            "desc": "Memastikan kode bulan (01, 08, 12) dikonversi tepat ke nama bulan baku bahasa Indonesia",
+            "assertions": 3,
+            "passed": true,
+            "actual": "Hasil konversi: 01->Januari, 08->Agustus, 12->Desember"
+        },
+        {
+            "name": "testValidasiDaftarRoleSistem",
+            "desc": "Memastikan whitelist hak akses sistem secara ketat hanya mengizinkan 5 role resmi (admin, kepsek, wali, guru, siswa)",
+            "assertions": 6,
+            "passed": true,
+            "actual": "Seluruh 5 role resmi terdaftar valid, dan role asing 'hacker' berhasil ditolak"
+        },
+        {
+            "name": "testFilterPromptCodingDitolak",
+            "desc": "Memastikan prompt yang meminta pembuatan kode pemrograman di luar ranah sistem absensi ditolak secara protektif oleh filter",
+            "assertions": 1,
+            "passed": true,
+            "actual": "Prompt coding terdeteksi dan di-flag untuk ditolak dengan pesan sopan"
+        },
+        {
+            "name": "testPromptSistemAbsensiDiizinkan",
+            "desc": "Memastikan prompt pertanyaan operasional absensi sekolah tidak terblokir dan diteruskan ke pemrosesan AI",
+            "assertions": 1,
+            "passed": true,
+            "actual": "Prompt operasional absensi sekolah lolos filter keamanan"
+        }
+    ]
+}

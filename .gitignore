@@ -1,0 +1,50 @@
+# ==============================================================================
+# GITIGNORE - SISTEM ABSENSI SMK NU WARGABINANGUN
+# ==============================================================================
+
+# Environment & Credentials (SANGAT PENTING: JANGAN DI-PUSH KE GITHUB)
+.env
+*.env
+**/.env
+.env.local
+.env.*.local
+
+# Node Dependencies
+node_modules/
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary Screenshots & Scripts
+test_*.png
+check_ai_cfg.php
+*.log
+~$*
+*.tmp
+
+# User Uploads (Kecualikan .gitkeep agar folder tetap terlacak)
+/public/uploads/surat/*
+!/public/uploads/surat/.gitkeep
+/public/uploads/profil/*
+!/public/uploads/profil/.gitkeep
