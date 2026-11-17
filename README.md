@@ -5,6 +5,7 @@
 ---
 
 <!-- BADGES -->
+[![CI Pipeline](https://github.com/novi23112006-ship-it/websekolah/actions/workflows/ci.yml/badge.svg)](https://github.com/novi23112006-ship-it/websekolah/actions/workflows/ci.yml)
 ![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Architecture](https://img.shields.io/badge/Architecture-Custom%20MVC-blue?style=for-the-badge)
 ![Database](https://img.shields.io/badge/Database-MySQL%20%2F%20MariaDB-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
