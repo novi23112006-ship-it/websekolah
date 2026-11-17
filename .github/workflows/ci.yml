@@ -1,0 +1,54 @@
+name: CI - Sistem Absensi SMK NU WARGABINANGUN
+
+# Workflow berjalan otomatis ketika ada push atau pull request ke branch main/master
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: PHP Lint & Unit Testing (PHPUnit)
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: ['8.1', '8.2', '8.3']
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup PHP Environment
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: mbstring, pdo, pdo_mysql, curl, json, fileinfo, openssl
+          coverage: none
+
+      - name: 📋 Setup Environment Configuration (.env)
+        run: |
+          cp .env.example .env
+          echo "File .env berhasil disiapkan dari template .env.example"
+
+      - name: 🔍 PHP Syntax Lint Check
+        run: |
+          echo "Memeriksa sintaks seluruh berkas PHP dalam project..."
+          find app config tests -type f -name "*.php" -exec php -l {} +
+
+      - name: 🧪 Execute Unit Test Suite (PHPUnit)
+        run: |
+          echo "Menjalankan Test Suite PHPUnit..."
+          php tests/runner.php
+
+      - name: 📊 Verify Test Artifacts
+        run: |
+          if [ -f tests/test_results.json ]; then
+            echo "Ringkasan Hasil Pengujian:"
+            cat tests/test_results.json
+          else
+            echo "Peringatan: Berkas test_results.json tidak ditemukan."
+            exit 1
+          fi

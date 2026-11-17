@@ -70,3 +70,5 @@ $report = [
     'test_cases' => $results
 ];
 file_put_contents(__DIR__ . '/test_results.json', json_encode($report, JSON_PRETTY_PRINT));
+
+exit($failedTests === 0 ? 0 : 1);
