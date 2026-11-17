@@ -322,15 +322,12 @@ $currentTime = date('H:i:s');
                                                 <span class="text-muted small"><?= htmlspecialchars($jm['keterangan'] ?? '-') ?></span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="badge <?= $kbmStatus['badge_class'] ?> rounded-pill px-3 py-1">
+                                                <span class="badge <?= $kbmStatus['badge'] ?? 'bg-secondary' ?> rounded-pill px-3 py-1">
                                                     <i class="<?= $kbmStatus['icon'] ?> me-1"></i><?= $kbmStatus['label'] ?>
                                                 </span>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
                                 </tbody>
                             </table>
                         </div>

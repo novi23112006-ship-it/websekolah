@@ -530,7 +530,7 @@ $lokasi = $data['lokasi'] ?? [];
                                 <div class="input-group">
                                     <span class="input-group-text bg-light"><i class="bi bi-building"></i></span>
                                     <input type="text" class="form-control" id="nama_sekolah_lokasi" name="nama_sekolah" 
-                                           value="<?= htmlspecialchars($lokasi['nama_sekolah'] ?? 'SMK Negeri'); ?>" required>
+                                           value="<?= htmlspecialchars($lokasi['nama_sekolah'] ?? 'SMK NU WARGABINANGUN'); ?>" required>
                                 </div>
                             </div>
 

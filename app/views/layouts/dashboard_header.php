@@ -44,10 +44,10 @@
                 <button type="button" class="btn-sidebar-toggle" id="btnToggleSidebar" aria-label="Toggle Sidebar" title="Buka/Tutup Navigasi">
                     <i class="bi bi-list"></i>
                 </button>
-                <a href="<?= BASEURL; ?>/<?= $_SESSION['role'] ?? 'admin' ?>" class="sidebar-brand-link" title="Sistem Absensi SMK">
+                <a href="<?= BASEURL; ?>/<?= $_SESSION['role'] ?? 'admin' ?>" class="sidebar-brand-link" title="Sistem Absensi SMK NU WARGABINANGUN">
                     <div class="sidebar-brand-text">
                         <span class="sidebar-brand-title">Sistem Absensi</span>
-                        <span class="sidebar-brand-subtitle">SMK Negeri</span>
+                        <span class="sidebar-brand-subtitle">SMK NU WARGABINANGUN</span>
                     </div>
                 </a>
                 <button type="button" class="btn btn-sm btn-light border d-lg-none p-1 text-secondary ms-auto" id="btnSidebarClose" aria-label="Tutup Menu">
